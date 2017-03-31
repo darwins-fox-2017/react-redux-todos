@@ -6,6 +6,7 @@ const todosReducer = (state = [], action) => {
       case ActionTypes.GET_TODOS:
         return action.payload
       case ActionTypes.POST_TODOS:
+        return [...state, action.payload]
       case ActionTypes.PUT_TODOS:
       case ActionTypes.DELETE_TODOS:
       default: return state

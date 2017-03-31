@@ -1,7 +1,7 @@
 import React from 'react'
 import { Table, Button } from 'react-materialize';
 import { connect } from 'react-redux'
-import { fetchTodos } from '../actions';
+import { fetchTodos, removeTodos } from '../actions';
 
 
 class Tables extends React.Component {
@@ -33,7 +33,7 @@ class Tables extends React.Component {
                   <td>{item.id}</td>
                   <td>{item.todos}</td>
                   <td>{item.completed}</td>
-                  <td><Button>Update</Button><Button>Delete</Button></td>
+                  <td><Button>Update</Button><Button onClick={()=>this.props.removeTodos(item.id)}>Delete</Button></td>
                 </tr>
               )
             })
@@ -53,7 +53,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchTodos: () => dispatch(fetchTodos())
+    fetchTodos: () => dispatch(fetchTodos()),
+    removeTodos: (id) => dispatch(removeTodos(id))
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps) (Tables)
