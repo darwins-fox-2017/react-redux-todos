@@ -1,18 +1,16 @@
 {
-  "posts": [
-    {
-      "task": "Endy brengsek",
-      "id": 13,
-      "status": ""
-    },
-    {
-      "task": "Satu",
-      "id": 14,
-      "status": ""
-    }
-  ],
-  "comments": [],
-  "profile": {
-    "name": "typicode"
+    "posts": [
+        {
+            "task": "sdg",
+            "id": 6
+  },
+        {
+            "task": "sdgsdfdsf",
+            "id": 7
   }
+],
+    "comments": [],
+    "profile": {
+        "name": "typicode"
+    }
 }

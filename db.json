@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "task": "beli gundam",
+      "id": 8
+    },
+    {
+      "task": "beli kucing",
+      "id": 9
+    },
+    {
+      "task": "jacky",
+      "id": 10
+    },
+    {
+      "task": "beli buku",
+      "id": 11
+    },
+    {
+      "task": "coba",
+      "id": 12
+    },
+    {
+      "task": "beli coca cola",
+      "id": 13
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
