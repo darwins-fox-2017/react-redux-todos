@@ -8,7 +8,9 @@ const todosReducer = (state = [], action) => {
       case ActionTypes.POST_TODOS:
         return [...state, action.payload]
       case ActionTypes.PUT_TODOS:
+        return state.map(todo => todo.id === action.payload.id ? Object.assign({}, todo, {title: action.payload.title}) :todo)
       case ActionTypes.DELETE_TODOS:
+        return state.filter(todo => todo !== action.payload)
       default: return state
   }
 }

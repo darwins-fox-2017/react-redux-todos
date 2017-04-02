@@ -7,7 +7,7 @@ export const getTodos = results => ({
 });
 
 export const putTodos = results => ({
-  type: ActionTypes.POST_TODOS,
+  type: ActionTypes.PUT_TODOS,
   payload: results
 });
 
@@ -45,26 +45,28 @@ export const createTodos = (data) => {
   }
 }
 
-// export const editTodos = () => {
-//   return (dispatch) => {
-//     axios.put('http://localhost:2000/todos',{
-//
-//     })
-//     .then(function (response) {
-//       dispatch(putTodos(response.data));
-//     })
-//     .catch(function (error) {
-//       console.log(error);
-//     });
-//   }
-// }
+export const editTodos = (todo) => {
+  return (dispatch) => {
+    axios.put('http://localhost:2000/todos/'+todo.id,{
+      todos: todo.todos,
+      completed: todo.completed
+    })
+    .then(function (response) {
+      console.log(response.data);
+      dispatch(putTodos(response.data));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+}
 
-export const removeTodos = (id) => {
+export const removeTodos = (todo) => {
   console.log('disini');
   return (dispatch) => {
-    axios.delete('http://localhost:2000/todos/'+id)
+    axios.delete('http://localhost:2000/todos/'+todo.id)
     .then(function (response) {
-      dispatch(fetchTodos());
+      dispatch(deleteTodos(todo));
     })
     .catch(function (error) {
       console.log(error);
